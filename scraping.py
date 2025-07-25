@@ -105,6 +105,7 @@ class WebScraperVereadores:
         try:
             WebDriverWait(self.driver, self.wait_timeout).until(
                 EC.presence_of_element_located((By.TAG_NAME, "table"))
+            )
             
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
             self._analyze_page_structure(soup, vereador_name)
